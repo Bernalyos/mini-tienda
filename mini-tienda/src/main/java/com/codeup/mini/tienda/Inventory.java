@@ -153,6 +153,19 @@ public class Inventory {
         JOptionPane.showMessageDialog(null, "Gracias por usar el sistema.\nTotal de compras: $" + totalShopping);
         System.exit(0);
     }
+    
+    // --- Helpers ---
+    private static double[] expandPrecios(double[] oldArray, double nuevoPrecio) {
+        double[] newArray = new double[oldArray.length + 1];
+        System.arraycopy(oldArray, 0, newArray, 0, oldArray.length);
+        newArray[oldArray.length] = nuevoPrecio;
+        return newArray;
+    }
+
+    private static int indexOfNombre(String nombre) {
+        return name.indexOf(nombre);
+    }
+}
      
     
-}
+
